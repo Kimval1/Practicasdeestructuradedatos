@@ -90,6 +90,22 @@ int main()
     cout << "Promedio: " << promedio << endl;
     cout << "Estado: " << estado << endl;
 
+    break;
+
+    case 2:
+    cout << "Sistema de calificaciones Escolares" << endl;
+    cout << "Este programa permite registrar estudiantes y calcular sus calificaciones" << endl;
+    break;
+
+    case 3:
+    cout << "Saliendo del programa..." << endl;
+    break;
+
+    default:
+    cout << "Opcion Invalida." << endl;
+    break;
+    
+    }   
 
 
     return 0;
