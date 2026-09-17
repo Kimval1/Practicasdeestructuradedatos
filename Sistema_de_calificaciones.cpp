@@ -9,8 +9,17 @@ int main()
     string nombre;
     int edad;
     int opcion;
-    float calificacion1, calificacion2, calificacion3;
     float promedio;
+    int cantidadCalificaciones;
+
+    float calificacion;
+    float suma = 0;
+    float calificacionMasAlta;
+    float calificacionMasBaja;
+    
+    int aprobadas = 0;
+    int reprobadas = 0;
+
 
 // Nuevo Menu Principal!
     cout << "=== SISTEMA DE CALIFICACIONES ===" << endl;
