@@ -8,8 +8,21 @@ int main()
     // Declaración de variables
     string nombre;
     int edad;
+    int opcion;
     float calificacion1, calificacion2, calificacion3;
     float promedio;
+
+// Nuevo Menu Principal!
+    cout << "=== SISTEMA DE CALIFICACIONES ===" << endl;
+    cout << "1. Registrar estudiante" << endl;
+    cout << "2. Ver informacion del programa" << endl;
+    cout << "3. Salir" << endl;
+    cout << "Inserta una opcion ingresando la numeracion: ";
+    cin >> opcion;
+
+    switch (opcion)
+    {
+        case 1:
 
     // Solicitar datos
     cout << "Ingrese el nombre del estudiante: ";
@@ -76,6 +89,8 @@ int main()
     cout << "Calificacion 3: " << calificacion3 << endl;
     cout << "Promedio: " << promedio << endl;
     cout << "Estado: " << estado << endl;
+
+
 
     return 0;
 }
