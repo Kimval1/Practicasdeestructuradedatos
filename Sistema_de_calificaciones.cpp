@@ -23,16 +23,24 @@ int main()
 
 
 // Nuevo Menu Principal!
+do
+{
     cout << "=== SISTEMA DE CALIFICACIONES ===" << endl;
     cout << "1. Registrar estudiante" << endl;
     cout << "2. Ver informacion del programa" << endl;
     cout << "3. Salir" << endl;
+    cout << "4. Registrar otro estudiante" << endl;  
     cout << "Inserta una opcion ingresando la numeracion: ";
     cin >> opcion;
 
     switch (opcion)
     {
         case 1:
+        case 4:
+        
+            suma = 0;
+            aprobadas = 0;
+            reprobadas = 0;
 
     // Solicitar datos
     cout << "Ingrese el nombre del estudiante: ";
@@ -141,8 +149,9 @@ while (edad < 0 || edad > 99)
     cout << "Opcion Invalida." << endl;
     break;
     
-    }   
+      }
 
+} while (opcion != 3);
 
     return 0;
 }
