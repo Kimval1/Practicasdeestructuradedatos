@@ -3,6 +3,13 @@
 
 using namespace std;
 
+void mostrarMenu();
+int leerEntero(string mensaje, int min, int max);
+float leerCalificacion(int numero);
+float calcularPromedio(float suma, int n);
+string obtenerEstado(float promedio);
+void registrarEstudiante();
+
 int main()
 {
     // Declaración de variables
@@ -15,7 +22,6 @@ int main()
     float calificacion;
     float suma = 0;
     float calificacionMasAlta;
-    float calificacionMasBaja;
 
     int aprobadas = 0;
     int reprobadas = 0;
