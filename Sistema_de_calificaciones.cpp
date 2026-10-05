@@ -92,22 +92,7 @@ opcion = leerEntero("", 1, 4);
     // Calcular promedio
     promedio = calcularPromedio(suma, cantidadCalificaciones);
    
-    if (promedio >= 9)
-    {
-        estado = "EXCELENTE";
-    }
-    else if (promedio >= 7)
-    {
-        estado = "APROBADO";
-    }
-    else if (promedio >= 6)
-    {
-        estado = "REGULAR (aprobado con lo minimo)";
-    }
-    else
-    {
-        estado = "REPROBADO";
-    }
+    estado = obtenerEstado(promedio);
 
     // Mostrar el resultado
     cout << endl;
@@ -193,3 +178,22 @@ float calcularPromedio(float suma, int n)
     return suma / n;
 }
 
+string obtenerEstado(float promedio)
+{
+    if (promedio >= 9)
+    {
+        return "EXCELENTE";
+    }
+    else if (promedio >= 7)
+    {
+        return "APROBADO";
+    }
+    else if (promedio >= 6)
+    {
+        return "REGULAR (aprobado con lo minimo)";
+    }
+    else
+    {
+        return "REPROBADO";
+    }
+}
