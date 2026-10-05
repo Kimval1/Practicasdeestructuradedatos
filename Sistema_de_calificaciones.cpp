@@ -62,6 +62,7 @@ opcion = leerEntero("", 1, 4);
     return 0;
 }
 
+//FUNCIONES DEL NIVEL 7//
 void mostrarMenu()
 {
     cout << "=== SISTEMA DE CALIFICACIONES ===" << endl;
