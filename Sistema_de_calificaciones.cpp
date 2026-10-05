@@ -38,75 +38,9 @@ opcion = leerEntero("", 1, 4);
     {
         case 1:
         case 4:
-        
-            suma = 0;
-            aprobadas = 0;
-            reprobadas = 0;
-
-    // Solicitar datos
-    cout << "Ingrese el nombre del estudiante: ";
-    cin >> nombre;
-
-   edad = leerEntero("Ingrese la edad: ", 0, 99);
-
-    cout <<"Cuantas calificaciones deseas registrar?" ;
-    cin >> cantidadCalificaciones;
-
-   for (int i = 1; i <= cantidadCalificaciones; i++)
-
-    {
-
-    calificacion = leerCalificacion(i);
-
-    suma = suma + calificacion;
-
-    if (calificacion >= 6)
-    {
-        aprobadas++;
-    }
-    else
-    {
-        reprobadas++;
-    }
-
-    if (i == 1)
-    {
-        calificacionMasAlta = calificacion;
-        calificacionMasBaja = calificacion;
-    }
-    else
-    {
-        if (calificacion > calificacionMasAlta)
-        {
-            calificacionMasAlta = calificacion;
-        }
-
-        if (calificacion < calificacionMasBaja)
-        {
-            calificacionMasBaja = calificacion;
-        }
-    }
-}
-
-
-    // Calcular promedio
-    promedio = calcularPromedio(suma, cantidadCalificaciones);
-   
-    estado = obtenerEstado(promedio);
-
-    // Mostrar el resultado
-    cout << endl;
-    cout << " RESUMEN DEL ESTUDIANTE " << endl;
-    cout << "Nombre: " << nombre << endl;
-    cout << "Edad: " << edad << endl;
-    cout << "Promedio: " << promedio << endl;
-    cout << "Calificacion mas alta: " << calificacionMasAlta << endl;
-    cout << "Calificacion mas baja: " << calificacionMasBaja << endl;
-    cout <<"Calificaciones aprobatorias:" << aprobadas << endl;
-    cout <<"Calificaciones reprobatorias:" << reprobadas << endl;
-    cout << "Estado: " << estado << endl;
-
+        registrarEstudiante();
     break;
+            
 
     case 2:
     cout << "Sistema de calificaciones Escolares" << endl;
@@ -196,4 +130,76 @@ string obtenerEstado(float promedio)
     {
         return "REPROBADO";
     }
+}
+
+void registrarEstudiante()
+{
+    
+            suma = 0;
+            aprobadas = 0;
+            reprobadas = 0;
+
+    // Solicitar datos
+    cout << "Ingrese el nombre del estudiante: ";
+    cin >> nombre;
+
+   edad = leerEntero("Ingrese la edad: ", 0, 99);
+
+    cout <<"Cuantas calificaciones deseas registrar?" ;
+    cin >> cantidadCalificaciones;
+
+   for (int i = 1; i <= cantidadCalificaciones; i++)
+
+    {
+
+    calificacion = leerCalificacion(i);
+
+    suma = suma + calificacion;
+
+    if (calificacion >= 6)
+    {
+        aprobadas++;
+    }
+    else
+    {
+        reprobadas++;
+    }
+
+    if (i == 1)
+    {
+        calificacionMasAlta = calificacion;
+        calificacionMasBaja = calificacion;
+    }
+    else
+    {
+        if (calificacion > calificacionMasAlta)
+        {
+            calificacionMasAlta = calificacion;
+        }
+
+        if (calificacion < calificacionMasBaja)
+        {
+            calificacionMasBaja = calificacion;
+        }
+    }
+}
+
+
+    // Calcular promedio
+    promedio = calcularPromedio(suma, cantidadCalificaciones);
+   
+    estado = obtenerEstado(promedio);
+
+    // Mostrar el resultado
+    cout << endl;
+    cout << " RESUMEN DEL ESTUDIANTE " << endl;
+    cout << "Nombre: " << nombre << endl;
+    cout << "Edad: " << edad << endl;
+    cout << "Promedio: " << promedio << endl;
+    cout << "Calificacion mas alta: " << calificacionMasAlta << endl;
+    cout << "Calificacion mas baja: " << calificacionMasBaja << endl;
+    cout <<"Calificaciones aprobatorias:" << aprobadas << endl;
+    cout <<"Calificaciones reprobatorias:" << reprobadas << endl;
+    cout << "Estado: " << estado << endl;
+
 }
