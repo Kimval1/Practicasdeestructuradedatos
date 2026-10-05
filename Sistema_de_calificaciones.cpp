@@ -22,7 +22,7 @@ int main()
     float calificacion;
     float suma = 0;
     float calificacionMasAlta;
-
+    float calificacionMasBaja;
     int aprobadas = 0;
     int reprobadas = 0;
     string estado;
@@ -31,13 +31,8 @@ int main()
 // Nuevo Menu Principal!
 do
 {
-    cout << "=== SISTEMA DE CALIFICACIONES ===" << endl;
-    cout << "1. Registrar estudiante" << endl;
-    cout << "2. Ver informacion del programa" << endl;
-    cout << "3. Salir" << endl;
-    cout << "4. Registrar otro estudiante" << endl;  
-    cout << "Inserta una opcion ingresando la numeracion: ";
-    cin >> opcion;
+   mostrarMenu();
+opcion = leerEntero("", 1, 4);
 
     switch (opcion)
     {
@@ -52,14 +47,7 @@ do
     cout << "Ingrese el nombre del estudiante: ";
     cin >> nombre;
 
-    cout << "Ingrese la edad: ";
-cin >> edad;
-
-while (edad < 0 || edad > 99)
-{
-    cout << "Edad invalida. Ingrese nuevamente la edad: ";
-    cin >> edad;
-}
+   edad = leerEntero("Ingrese la edad: ", 0, 99);
 
     cout <<"Cuantas calificaciones deseas registrar?" ;
     cin >> cantidadCalificaciones;
@@ -67,15 +55,8 @@ while (edad < 0 || edad > 99)
    for (int i = 1; i <= cantidadCalificaciones; i++)
 
     {
-    cout << "Ingrese la calificacion " << i << ": ";
-    cin >> calificacion;
 
-    while (calificacion < 0 || calificacion > 10)
-{
-    cout << "Error: La calificacion debe estar entre 0 y 10." << endl;
-    cout << "Ingrese nuevamente la calificacion " << i << ": ";
-    cin >> calificacion;
-}
+    calificacion = leerCalificacion(i);
 
     suma = suma + calificacion;
 
@@ -109,7 +90,7 @@ while (edad < 0 || edad > 99)
 
 
     // Calcular promedio
-    promedio = suma / cantidadCalificaciones;
+    promedio = calcularPromedio(suma, cantidadCalificaciones);
    
     if (promedio >= 9)
     {
@@ -161,3 +142,54 @@ while (edad < 0 || edad > 99)
 
     return 0;
 }
+
+void mostrarMenu()
+{
+    cout << "=== SISTEMA DE CALIFICACIONES ===" << endl;
+    cout << "1. Registrar estudiante" << endl;
+    cout << "2. Ver informacion del programa" << endl;
+    cout << "3. Salir" << endl;
+    cout << "4. Registrar otro estudiante" << endl;
+    cout << "Inserta una opcion ingresando la numeracion: ";
+}
+
+int leerEntero(string mensaje, int min, int max)
+{
+    int valor;
+
+    cout << mensaje;
+    cin >> valor;
+
+    while (valor < min || valor > max)
+    {
+        cout << "Valor invalido. Ingrese nuevamente: ";
+        cin >> valor;
+    }
+
+    return valor;
+}
+
+
+float leerCalificacion(int numero)
+{
+    float calificacion;
+
+    cout << "Ingrese la calificacion " << numero << ": ";
+    cin >> calificacion;
+
+    while (calificacion < 0 || calificacion > 10)
+    {
+        cout << "Error: La calificacion debe estar entre 0 y 10." << endl;
+        cout << "Ingrese nuevamente la calificacion " << numero << ": ";
+        cin >> calificacion;
+    }
+
+    return calificacion;
+}
+
+
+float calcularPromedio(float suma, int n)
+{
+    return suma / n;
+}
+
